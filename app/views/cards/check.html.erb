@@ -1,0 +1,18 @@
+<main class="container">
+
+  <%= turbo_frame_tag 'validated_turbo_tag' do %>
+    <div class="header">
+      cards
+    </div>
+
+    <ul>
+    <% @cards.each do |card| %>
+      <li>
+        <%= card[:type] ? "Fly Buys #{card[:type].capitalize}" : 'Unknown' %>
+        <%= card[:number] %> 
+        (<%= card[:status] ? 'valid' : 'invalid' %>)
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+</main>

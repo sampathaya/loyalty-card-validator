@@ -1,0 +1,13 @@
+<%= turbo_frame_tag 'card_turbo_tag' do %>
+  <%= form_tag '/cards/check', data: { turbo_frame: 'validated_turbo_tag' } do %>
+    <%= text_area_tag :cards, nil, size: '100*100' %>
+    <%= submit_tag 'check' %>
+  <% end %>
+<% end %>
+
+<%= link_to 'reset', cards_path, data: { target: '_top' } %>
+<hr/>
+
+<%= turbo_frame_tag 'validated_turbo_tag' do %>
+  validated turbo tag
+<% end %>
